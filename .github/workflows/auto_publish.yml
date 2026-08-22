@@ -126,7 +126,7 @@ jobs:
 
           # AI Caption
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
-          AI_MODEL: openai
+          AI_MODEL: gemini-fast
         run: |
           echo "Starting automation pipeline..."
           echo "Google Drive Folder: $GOOGLE_DRIVE_FOLDER_ID"
