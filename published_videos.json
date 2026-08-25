@@ -126,5 +126,21 @@
             },
             "recycled": false
         }
+    },
+    {
+        "video_name": "Stickman_trapped_in_giant_bubble_202608230003.mp4",
+        "metadata": {
+            "title": "The existential dread of choosing socks in the morning. A stickman epic.",
+            "description": "Ah, the dawn. The glorious, sun-drenched dawn. Or, as our stickman hero experiences it, the dimly lit, sock-drawer abyss where logic goes to die. Is it the blue striped ones that whisper promises of productivity, or the slightly-too-tight grey ones that silently scream 'comfort over everything'? He's wrestling with a decision that has plagued humanity since the invention of laundry. Witness the internal monologue of a simple stickman grappling with the profound complexities of hosiery.  Tag someone who spends longer choosing socks than they do their entire outfit! \ud83d\ude02  Comment your morning sartorial struggles below!  Share this with a friend who understands the sock-rifice.  Follow Stickman for daily insights into the human condition (and also some really dumb jokes).",
+            "success_flags": {
+                "instagram_reel": true,
+                "instagram_story": true,
+                "facebook_reel": true,
+                "facebook_story": false,
+                "threads": false,
+                "youtube": false
+            },
+            "recycled": false
+        }
     }
 ]
