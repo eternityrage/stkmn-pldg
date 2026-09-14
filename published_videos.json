@@ -1102,5 +1102,21 @@
             },
             "recycled": true
         }
+    },
+    {
+        "video_name": "Stickman_grows_giant_ice_cream_202608230003.mp4",
+        "metadata": {
+            "title": "The Existential Crisis of a Slightly Uneven Toaster",
+            "description": "Witness the profound, soul-crushing struggle of our protagonist as he attempts to achieve perfect toast, only to be thwarted by the immutable laws of physics and a suspiciously sentient kitchen appliance.  Observe the sheer, unadulterated drama unfold as he grapples with the fundamental question: is the butter truly spreadable, or is this merely a cruel cosmic jest?  This gripping narrative explores themes of ambition, disappointment, and the unbearable lightness of being... a stickman facing burnt bread.  Prepare for a visceral, yet understated, exploration of everyday despair. Tag someone who's experienced a similar breakfast-related existential crisis! \ud83d\ude02 Comment your most memorable kitchen fail below! Share this with a friend who appreciates the nuanced tragedy of burnt toast! Follow Stickman for a daily dose of beautifully rendered, low-stakes absurdity!",
+            "success_flags": {
+                "instagram_reel": true,
+                "instagram_story": true,
+                "facebook_reel": true,
+                "facebook_story": true,
+                "threads": false,
+                "youtube": false
+            },
+            "recycled": true
+        }
     }
 ]
