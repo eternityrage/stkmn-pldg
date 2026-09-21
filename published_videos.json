@@ -1438,5 +1438,21 @@
             },
             "recycled": false
         }
+    },
+    {
+        "video_name": "Stickman_skateboard_trick_explodes_20260921111053.mp4",
+        "metadata": {
+            "title": "The Existential Dread of Choosing a Netflix Show (Stickman Edition)",
+            "description": "You know the drill. You have hours of free time, a perfectly cozy setup, and the only thing standing between you and pure bliss is the Herculean task of selecting something to watch.  The infinite scroll, the indecision paralysis, the existential dread of picking the *wrong* one and wasting precious relaxation time... it's a struggle we all face.  This stickman perfectly captures that silent, yet epic, battle of wills against your own streaming service.  Did you just spend 45 minutes scrolling and end up watching the same show again? We've all been there. \n\nTag someone who spends more time choosing than watching! \ud83d\ude02\nComment your go-to 'default' show when indecisive! \nShare this with a friend who needs to know they're not alone in their Netflix purgatory!\nFollow Stickman for more hilarious slices of life!",
+            "success_flags": {
+                "instagram_reel": true,
+                "instagram_story": true,
+                "facebook_reel": true,
+                "facebook_story": true,
+                "threads": false,
+                "youtube": false
+            },
+            "recycled": true
+        }
     }
 ]
