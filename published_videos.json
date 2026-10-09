@@ -2286,5 +2286,21 @@
             },
             "recycled": true
         }
+    },
+    {
+        "video_name": "Stickman_grows_giant_ice_cream_202608230003.mp4",
+        "metadata": {
+            "title": "The Existential Dread of Toaster Pastries",
+            "description": "Ever stare into the abyss of a slightly burnt Pop-Tart and question all your life choices?  Yeah, us too. This stickman's journey through the breakfast realm is a profound, yet utterly ridiculous, exploration of our daily struggles with imperfectly toasted goods and the crushing weight of early morning decisions.  Is it a culinary triumph or a sugary harbinger of doom?  We're leaning towards doom, but hey, at least it's funny!  Tag someone who battles their breakfast like a seasoned warrior! \ud83d\ude02  What's your most disastrous breakfast fail?  Spill the beans (or the burnt crumbs!) in the comments below! Share this with a friend who needs a reminder that even toast can be a struggle. Follow Stickman for your daily dose of existential breakfast crises and general stick-figure shenanigans!",
+            "success_flags": {
+                "instagram_reel": true,
+                "instagram_story": true,
+                "facebook_reel": true,
+                "facebook_story": true,
+                "threads": false,
+                "youtube": false
+            },
+            "recycled": true
+        }
     }
 ]
