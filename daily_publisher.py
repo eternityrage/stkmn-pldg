@@ -200,6 +200,16 @@ def generate_caption():
         print(f"Error generating caption: {e}")
         return random.choice(fallback_titles), random.choice(fallback_descriptions)
 
+def should_upload_youtube_today():
+    """True when YouTube should publish today (3x/week: Mon/Wed/Fri UTC)."""
+    import datetime
+    flag = os.getenv("ENABLE_YOUTUBE")
+    if flag is not None:
+        return flag.strip().lower() in ("1", "true", "yes", "on")
+    # Fallback for local/manual runs without the workflow gate.
+    return datetime.datetime.now(datetime.timezone.utc).weekday() in (0, 2, 4)
+
+
 def main():
     print("=" * 60)
     print("🚀 DAILY AUTOMATION STARTING")
@@ -280,12 +290,19 @@ def main():
     except Exception as e:
         print(f"❌ Threads upload failed: {e}")
         
-    # YouTube Shorts
-    try:
-        upload_to_youtube(video_path, title, description, tags=["stickman", "funny", "animation", "comedy", "stickfigure", "relatable", "shorts", "humor", "cartoon", "lol", "memes", "funnyvideos", "drawing", "fyp"])
-        success_flags["youtube"] = True
-    except Exception as e:
-        print(f"❌ YouTube upload failed: {e}")
+    # YouTube Shorts (3x per week: Mon / Wed / Fri UTC).
+    # The workflow sets ENABLE_YOUTUBE=true only on those days.
+    # When the variable is unset (e.g. local runs), fall back to the
+    # same Mon/Wed/Fri rule so behaviour stays consistent.
+    youtube_enabled = should_upload_youtube_today()
+    if not youtube_enabled:
+        print("⏭️  YouTube: Skipped (only Mon/Wed/Fri, 3x per week)")
+    else:
+        try:
+            upload_to_youtube(video_path, title, description, tags=["stickman", "funny", "animation", "comedy", "stickfigure", "relatable", "shorts", "humor", "cartoon", "lol", "memes", "funnyvideos", "drawing", "fyp"])
+            success_flags["youtube"] = True
+        except Exception as e:
+            print(f"❌ YouTube upload failed: {e}")
         
     # Record as published regardless of partial success,
     # to avoid repeating the same video. Alternatively, only record if fully successful.

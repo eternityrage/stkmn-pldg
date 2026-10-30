@@ -2,12 +2,9 @@ name: Auto Publish Videos
 
 on:
   schedule:
-    # Run 3 times a day at:
-    # - 8:00 AM UTC
-    # - 4:00 PM UTC
-    # - 12:00 AM UTC
-    - cron: '0 16 * * *'
-    - cron: '0 0 * * *'
+    # Once per day for Facebook/Instagram/Threads.
+    # YouTube is further gated to Mon/Wed/Fri inside the job (3x/week).
+    - cron: '0 8 * * *'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -69,6 +66,9 @@ jobs:
             "FACEBOOK_PAGE_ID"
             "THREADS_ACCESS_TOKEN"
             "THREADS_USER_ID"
+            "YT_CLIENT_ID"
+            "YT_CLIENT_SECRET"
+            "YT_REFRESH_TOKEN"
           )
 
           for secret in "${optional_secrets[@]}"; do
@@ -98,7 +98,21 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       
+      - name: Decide if YouTube runs today (3x/week)
+        run: |
+          DOW=$(date -u +%u)
+          if [ "$DOW" = "1" ] || [ "$DOW" = "3" ] || [ "$DOW" = "5" ]; then
+            echo "ENABLE_YOUTUBE=true" >> $GITHUB_ENV
+            echo "YouTube: ENABLED today (weekday $DOW = Mon/Wed/Fri)"
+          else
+            echo "ENABLE_YOUTUBE=false" >> $GITHUB_ENV
+            echo "YouTube: SKIPPED today (weekday $DOW, only Mon/Wed/Fri)"
+          fi
+
       - name: Run automation pipeline
         env:
           # Google Drive
@@ -122,6 +136,9 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+
+          # 3x/week gate (true on Mon/Wed/Fri, set by previous step)
+          ENABLE_YOUTUBE: ${{ env.ENABLE_YOUTUBE }}
 
           # AI Caption
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
