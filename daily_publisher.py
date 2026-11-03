@@ -109,7 +109,7 @@ def generate_caption():
     import time
 
     api_key = os.getenv("POLLINATIONS_API_KEY")
-    model = os.getenv("AI_MODEL", "gemini-fast")
+    model = os.getenv("AI_MODEL", "openai/gpt-5.4-nano")
 
     fallback_titles = [
         "When the Stickman Realizes Monday Is a Social Construct 😂",
